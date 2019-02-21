@@ -5,7 +5,7 @@
 //#endregion
 
 /**
- * возвращает результат проверки строки на содерзание слов,
+ * возвращает результат проверки строки на содержание слов,
  * функция нечувствительна к регистру
  * @param {string} str строка для проверки
  */
@@ -13,7 +13,7 @@ function checkSpam(str) {
 
     const lowerStr = str.toLowerCase();
     return !!( ~lowerStr.indexOf('viagra') || ~lowerStr.indexOf('xxx') );
-    
+
 }
 
 console.log(checkSpam('buy ViAgRA now') );  // true
