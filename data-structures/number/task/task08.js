@@ -10,8 +10,12 @@
  * @param {number} min минимальное для случайного
  * @param {number} max максимальное для случайного
  */
-function min_max_random(min, max) {
-    var min, max, result;
-    result = Math.random() * (max - min) + min  ;
-    return result;
+function randomInteger(min, max) {
+    var rand = min - 0.5 + Math.random() * (max - min + 1)
+    rand = Math.round(rand);
+    return rand;
+}
+
+for (var i = 0; i < 10; i++) {
+    console.log(randomInteger(2, 5));
 }
