@@ -17,6 +17,6 @@ function camelize(str) {
     return arr.join('');
 }
 
-console.log(camelize("bAckground-color")); // backgroundColor
-console.log(camelize("list-style-image")); // listStyleImage
-console.log(camelize("-webkit-transition")); //  WebkitTransition
+console.log(camelize("bAckground-color"));      // backgroundColor
+console.log(camelize("list-style-image"));      // listStyleImage
+console.log(camelize("-webkit-transition"));    // WebkitTransition
