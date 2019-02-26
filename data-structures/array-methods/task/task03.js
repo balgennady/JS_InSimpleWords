@@ -11,11 +11,24 @@ obj = {
   className: 'my menu menu'
 };
 
+// var obj = {
+// 	className: 'open menu'
+// }
+
+function  removeClass(obj, cls) {
+	var arr = obj.className.split(' ');
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i] == cls) {
+			arr.splice(i, 1);
+			i--;
+		}
+	}
+	obj.className = arr.join(' ');
+}
+
 removeClass(obj, 'menu');
 console.log( obj.className ); // 'my'
-
-var obj = {
-  className: 'open menu'
-};
-removeClass(obj, 'open'); // obj.className='menu'
-removeClass(obj, 'blabla'); // без изменений (нет такого класса)
+// removeClass(obj, 'open');
+// console.log(obj.className); // obj.className='menu'
+// removeClass(obj, 'blabla'); // без изменений (нет такого класса)
+// console.log(obj.className); // obj.className='menu'
