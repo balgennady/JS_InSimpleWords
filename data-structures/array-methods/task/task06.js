@@ -7,7 +7,15 @@
 
 var arr = ["HTML", "JavaScript", "CSS"];
 
-// ... ваш код ...
+var arrSorted = [];
+
+for (var i = 0; i < arr.length; i++) {
+    arrSorted.push(arr[i]);
+}
+
+// var arrSorted = arr.slice().sort();
+
+arrSorted.sort();
 
 console.log( arrSorted ); // CSS, HTML, JavaScript
 console.log( arr ); // HTML, JavaScript, CSS (без изменений)
