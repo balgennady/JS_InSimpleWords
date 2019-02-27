@@ -5,6 +5,10 @@
 
 var arr = [1, 2, 3, 4, 5];
 
-arr.sort(/*ваша функция*/);
+function rndSort(a, b) {
+    // min + Math.floor( Math.random() * (max + 1 - min) )
+    return -1 + Math.floor(Math.random() * (1 + 1 + 1));
+}
 
-console.log( arr ); // элементы в случайном порядке, например [3,5,1,2,4]
+arr.sort(rndSort);
+console.log(arr);
