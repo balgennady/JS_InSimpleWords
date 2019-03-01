@@ -9,7 +9,15 @@ var vovochka = { name: "Вовочка", age: 6 };
 
 var people = [ vasya , masha , vovochka ];
 
-// ... ваш код ...
+// function ageSort(a, b) {
+//     return (a.age > b.age) ? 1 : -1;
+// }
+
+// people.sort(ageSort);
+
+people.sort((a, b) => {
+    return (a.age > b.age) ? 1 : -1;
+});
 
 // теперь people: [vovochka, masha, vasya]
 console.log(people[0].age) // 6
