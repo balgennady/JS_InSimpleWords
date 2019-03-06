@@ -9,24 +9,30 @@
 //#endregion
 
 function aclean(arr) {
-    // 1 взять первое слово перевести в нижний региста и отсортеровать
 
-    for (let i = 0; i < arr.length; i++) {
-        let arrstr = arr[i].split('').sort();
-        for (let j = i+1; j < arr.length; j++) {
-            if (arrstr == arr[j].split('').sort()) {
-                arr.splice(arr[j], 1);
-                j++;
+    var delarr = [];
+
+    for (let firstStr = 0; firstStr < arr.length - 1; firstStr++) {
+
+        // console.log("firstStr: " + arr[firstStr]);
+        var str1 = arr[firstStr].toLowerCase().split('').sort().join("");
+
+        for (var secondStr = firstStr + 1; secondStr < arr.length; secondStr++) {
+
+            // console.log("secondStr: " + arr[secondStr]);
+            var str2 = arr[secondStr].toLowerCase().split('').sort().join("");
+
+            if (str1 == str2) {
+                // console.log( arr[firstStr] + " = " + arr[secondStr])
+                delarr.push(arr.splice(secondStr, 1));
+                secondStr--;
             }
         }
 
     }
-    // 2. взять второе слово и перевести в нижний регистр
-    //  2.1 сравнить длчну первого и второго
-    //      если длина совпадает побуквенно сравнить
-    //      если совпадает заменить на нуль
-
+    return arr;
 }
 
 var arr = ["воз", "киборг", "корсет", "ЗОВ", "гробик", "костер", "сектор"];
-console.log( aclean(arr) ); // "воз,киборг,корсет" или "ЗОВ,гробик,сектор"
+console.log(aclean(arr));
+ // "воз,киборг,корсет" или "ЗОВ,гробик,сектор"
